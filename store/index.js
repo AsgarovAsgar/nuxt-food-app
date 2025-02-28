@@ -16,7 +16,7 @@ export const actions = {
   }) {
     if (state.fooddata.length) return
     try {
-      await fetch('https://dva9vm8f1h.execute-api.us-east-2.amazonaws.com/production/restaurants',
+      await fetch('fakeApi/production/restaurants',
       {
         headers: {
           'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const actions = {
       })
       .then(response => response.json())
       .then(data => {
-        console.log("olalalala",data)
+        console.log("olalalala", data)
         commit('updateFoodData', data)
       })
     }
